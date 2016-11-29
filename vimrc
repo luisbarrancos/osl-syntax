@@ -115,6 +115,9 @@ let OmniCpp_DefaultNamespaces   = [ "wstd" , "_GLIBCXX_STD" ]
 au CursorMovedI,InsertLeave * if pumvisible() == 0 | silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
+" use default tags
+set tags+=$HOME/.vim/tags/tags
+
 " map ctrl+F12 to generate ctags for current folder
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 " add current directory generated tags to available tags
