@@ -7,12 +7,17 @@ Why all this you may ask? It does provides immediate visual cues, i.e, reserved 
 
 ### Installing
 
-Just copy the .vim syntax file to your ~/.vim/syntax directory, and the .vimrc to your ~.
+Copy the .vim syntax file to your ~/.vim/syntax directory, and the .vimrc to your ~.
 For more information on creating, modifying and installing [Vim][1] [syntax highlighting][3] files, visit [this link][4]
 
-### Requirements
+#### Requirements
 
-[Vim][1] obviously, and the vimrc configuration file is set for [OmniCompletion][5], which requires [Ctags][6]. Depending on how complex your shader library is, it might be worth it.
+[Vim][1] obviously, and the vimrc configuration file is set for [OmniCompletion][5], which requires [Ctags][6]. Depending on how complex your shader library is, it might be worth it. You can create your [ctags][6] file by running it with
+```
+ctags –R --c++-kinds=+p --fields=+iaS --extra=+q <path/to/your/stdosl.h> <path/to/your/headers & files>
+```
+Then copy it to your ~/.vim/tags/ directory.
+
 The vimrc file is using the [Liberation][7] fonts. If you use [Fedora][8], install via
 ```
 sudo dnf install liberation-mono-fonts
