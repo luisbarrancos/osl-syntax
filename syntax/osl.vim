@@ -312,9 +312,7 @@ endif
 syntax match oslCommentError	"\*/"
 
 
-"
-" preprocessor definitions
-"
+
 
 syn region   oslPreCondit	start="^\s*\(%:\|#\)\s*\(if\|ifdef\|ifndef\|elif\)\>" skip="\\$" end="$" end="//"me=s-1 contains=oslComment,oslCommentString,oslCharacter,oslParen,oslParenError,oslNumbers,oslCommentError,oslSpaceError,oslSpecial,oslCommentSkip,oslComment2String,oslTodo
 
@@ -329,6 +327,10 @@ syn match oslInclude    display "^\s*\(%:\|#\)\s*include\>\s*["<]" contains=oslI
 syn region oslDefine    start="^\s*\(%:\|#\)\s*\(define\|undef\)\>" skip="\\$" end="$" end="//"me=s-1 keepend contains=ALLBUT,@oslPreProcGroup,oslSpell
 
 syn region  oslPreProc	start="^\s*\(%:\|#\)\s*\(pragma\>\|line\>\|warning\>\|warn\>\|error\>\)" skip="\\$" end="$" keepend contains=ALLBUT,@oslPreProcGroup,oslSpell
+
+"
+" preprocessor definitions
+syn keyword oslPreprocBuiltin   __LINE__ __FILE__ __DATE__    
 
 
 " Matching of AOVs/custom AOVs, assuming suffix _aov as an example
@@ -403,6 +405,7 @@ if version >= 508 || !exists("did_osl_syntax_inits")
   HiLink oslConstant	        SpecialChar
   HiLink oslMacro	            Macro
   HiLink oslPreproc	            Preproc
+  HiLink oslPreprocBuiltin      Preproc
   HiLink oslInclude	            Include
   HiLink oslDefine	            Define
   HiLink oslPrecondit	        Precondit
