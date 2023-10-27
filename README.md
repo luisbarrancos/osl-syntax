@@ -25,9 +25,7 @@ sudo dnf install liberation-mono-fonts
 
 ### Screenshots
 
-Everyone wants screenshots, so here go you:
-
-![cap1](/img/cap1.jpg?raw=true)
+![cap1](/img/cap1.png?raw=true)
 
   [1]: http://www.vim.org/
   [2]: https://github.com/imageworks/OpenShadingLanguage
